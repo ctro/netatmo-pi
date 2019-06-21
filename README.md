@@ -9,6 +9,12 @@ You can query your local hardware with an API.
 - `bundle`
 - `cp .env.example .env` and fill it out
 
+## Tests
+
+`ruby test/test_netatmo_info.rb`
+
+The tests use your `.env` file and make actual API calls :)
+
 ## Weather station API 
 
 [https://dev.netatmo.com/resources/technical/samplessdks/codesamples#getstationsdata](https://dev.netatmo.com/resources/technical/samplessdks/codesamples#getstationsdata)
