@@ -53,7 +53,11 @@ sudo apt dist-upgrade -y
 sudo apt autoremove -y
 
 # Install things
-sudo apt install vim git -y
+sudo apt install vim git ruby -y
+
+echo "gem: --no-document" > ~/.gemrc
+sudo gem install bundler
+bundle install
 ```
 
 ### `wpa_supplicant.conf`
@@ -69,4 +73,10 @@ network={
 }
 ```
 
-##
+## ePaper Setup
+
+Homepage / documentation: https://github.com/PiSupply/PaPiRus
+
+`curl -sSL https://pisupp.ly/papiruscode | sudo bash`
+
+`sudo raspi-config` and enable **SPI** and **I2C** Interfaces.
