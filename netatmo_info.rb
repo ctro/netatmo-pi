@@ -67,7 +67,7 @@ class NetatmoInfo
   def arrow(direction)
     case direction
     when "stable"
-      "️️->"
+      "️️="
     when "up"
       "+"
     when "down"
