@@ -13,9 +13,9 @@ class NetatmoInfo
   def inside_string
     id = @data["body"]["devices"].first["dashboard_data"]
 
-    "In : ️#{c_to_f(id["Temperature"])}°#{arrow(id["temp_trend"])} " \
+    "In : #{c_to_f(id["Temperature"])}°#{arrow(id["temp_trend"])} " \
     "#{id["Humidity"]}% " \
-    "#{id["AbsolutePressure"]}mm#{arrow(id["pressure_trend"])} " \
+    "#{id["AbsolutePressure"]}mm #{arrow(id["pressure_trend"])} " \
     "#{id["CO2"]}ppm #{id["Noise"]}db"
   end
 
@@ -23,7 +23,7 @@ class NetatmoInfo
     # We only have one module, the outdoor module
     od = @data["body"]["devices"].first["modules"].first["dashboard_data"]
 
-    "Out: ️#{c_to_f(od["Temperature"])}°#{arrow(od["temp_trend"])} " \
+    "Out: #{c_to_f(od["Temperature"])}°#{arrow(od["temp_trend"])} " \
     "[#{c_to_f(od["min_temp"])}° / #{c_to_f(od["max_temp"])}°] " \
     "#{od["Humidity"]}%"
   end
