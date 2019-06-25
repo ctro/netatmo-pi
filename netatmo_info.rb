@@ -13,7 +13,7 @@ class NetatmoInfo
   def inside_string
     id = @data["body"]["devices"].first["dashboard_data"]
 
-    "In : #{c_to_f(id["Temperature"])}°#{arrow(id["temp_trend"])} " \
+    "In :#{c_to_f(id["Temperature"])}°#{arrow(id["temp_trend"])} " \
     "#{id["Humidity"]}% " \
     "#{id["AbsolutePressure"]}mm #{arrow(id["pressure_trend"])} " \
     "#{id["CO2"]}ppm #{id["Noise"]}db"
