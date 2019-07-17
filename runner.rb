@@ -4,3 +4,4 @@ ninfo = NetatmoInfo.new
 
 puts ninfo.inside_string
 puts ninfo.outside_string
+
