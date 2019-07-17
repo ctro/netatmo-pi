@@ -15,15 +15,15 @@ class NetatmoInfo
 
     "In : #{c_to_f(id["Temperature"])}*#{arrow(id["temp_trend"])} \n" \
     "#{id["AbsolutePressure"]}mm#{arrow(id["pressure_trend"])} \n" \
-    "#{id["Humidity"]}% #{id["CO2"]}ppm #{id["Noise"]}db"
+    "#{id["CO2"]}ppm  #{id["Humidity"]}% #{id["Noise"]}db"
   end
 
   def outside_string
     # We only have one module, the outdoor module
     od = @data["body"]["devices"].first["modules"].first["dashboard_data"]
 
-    "Out: #{c_to_f(od["Temperature"])}* #{arrow(od["temp_trend"])} \n" \
-    "[#{c_to_f(od["min_temp"])}* / #{c_to_f(od["max_temp"])}]* \n" \
+    "Out: #{c_to_f(od["Temperature"])}*#{arrow(od["temp_trend"])} \n" \
+    "#{c_to_f(od["min_temp"])}*lo #{c_to_f(od["max_temp"])}*hi " \
     "#{od["Humidity"]}%"
   end
 
