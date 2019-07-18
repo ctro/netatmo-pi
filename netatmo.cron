@@ -1,3 +1,4 @@
 # Every 5 min 7am - 9pm
 
 */5 07-21 * * * /home/pi/netatmo-pi/update-screen.sh
+
