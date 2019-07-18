@@ -21,7 +21,7 @@ class NetatmoInfo
   def outside_string
     # We only have one module, the outdoor module
     od = @data["body"]["devices"].first["modules"].first["dashboard_data"]
-
+ 
     "Out: #{c_to_f(od["Temperature"])}*#{arrow(od["temp_trend"])} \n" \
     "#{c_to_f(od["min_temp"])}*lo #{c_to_f(od["max_temp"])}*hi " \
     "#{od["Humidity"]}%"

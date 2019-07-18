@@ -83,4 +83,6 @@ Homepage / documentation: https://github.com/PiSupply/PaPiRus
 
 ## Cron Setup
 
+Install a mailer `sudo apt install postfix -y`
+
 Manual cron installation `crontab netatmo.cron`
