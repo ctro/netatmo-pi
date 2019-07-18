@@ -80,3 +80,7 @@ Homepage / documentation: https://github.com/PiSupply/PaPiRus
 `curl -sSL https://pisupp.ly/papiruscode | sudo bash`
 
 `sudo raspi-config` and enable **SPI** and **I2C** Interfaces.
+
+## Cron Setup
+
+Manual cron installation `crontab netatmo.cron`
