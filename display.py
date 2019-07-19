@@ -31,7 +31,7 @@ text.AddText("hello world", 10, 10, Id="Start" )
 
 # "Another line" will appear on screen at (0, 0), font size 20, straight away
 
-text.AddText("Another line", Id="Top")
+text.AddText("Another line", 0, 0, 55, Id="Top")
 
 
 
@@ -40,5 +40,7 @@ text.AddText("Another line", Id="Top")
 # "hello world" will disappear and "New Text" will be displayed straight away
 
 text.UpdateText("Start", "New Text")
+
+text.AddText("hello world", 10, 10, Id="Start2", invert=True)
 
 text.WriteAll()
