@@ -6,7 +6,7 @@
 
 A shell script at the root drives the whole thing.
 
-## TODO
+##TODO
 
-- use pressure not absolute pressure
-- change to Hg?  Hmm
+- [] change to Hg?  Hmm
+- [ ] round!

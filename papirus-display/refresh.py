@@ -53,7 +53,7 @@ with open('../netatmo-data.json') as json_file:
     temp_in_trend = inside['temp_trend']
     temp_out = str(c_to_f(outside['Temperature']))
     temp_out_trend = outside['temp_trend']
-    pressure = str(inside['AbsolutePressure'])
+    pressure = str(inside['Pressure'])
     pressure_trend = inside['pressure_trend']
     co2 = str(inside['CO2'])
     noise = str(inside['Noise'])
