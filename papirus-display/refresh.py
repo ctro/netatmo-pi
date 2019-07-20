@@ -8,39 +8,15 @@ text = PapirusText(0)
 
 # text.write(u"\u2302 \u2601 \u2602 \u2600 \u263C \u2B02 \u2198 \u2109 \u00B0 \u2192 \u2197 \u007C \u238B \u231A \u2603" + "hi", 23)
 
-# NEW!
+# Positional API
 from papirus import PapirusTextPos
 
+# Get the data
 
-
-# Same as calling "PapirusTextPos(True [,rotation = rot])"
-
+# Write to the screen
 text = PapirusTextPos(0)
-
-
-
-# Write text to the screen at selected point, with an Id
-
-# "hello world" will appear on the screen at (10, 10), font size 20, straight away
-
-text.AddText("hello world", 10, 10, Id="Start" )
-
-
-
-# Add another line of text, at the default location
-
-# "Another line" will appear on screen at (0, 0), font size 20, straight away
-
-text.AddText("Another line", 0, 0, 55, Id="Top")
-
-
-
-# Update the first line
-
-# "hello world" will disappear and "New Text" will be displayed straight away
-
-text.UpdateText("Start", "New Text")
-
-text.AddText("hello world", 10, 10, Id="Start2", invert=True)
+text.AddText("In", 0, 0, Id="inside")
+text.AddText("Out", 10, 10, Id="outside")
+text.AddText("Meter", 20, 20, Id="meter")
 
 text.WriteAll()

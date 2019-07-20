@@ -4,6 +4,4 @@
 * [Papirus Display is mostly in Pyton](./papirus-display/README.md)
 * [Raspberry Pi Zero setup](./pi-setup/README.md)
 
-## PaPiRus
-
-https://github.com/PiSupply/PaPiRus - write a bitmap or text
+A shell script at the root drives the whole thing.
