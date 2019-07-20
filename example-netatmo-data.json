@@ -1,0 +1,27 @@
+{
+  "inside": {
+    "time_utc": 1563593926,
+    "Temperature": 24.9,
+    "CO2": 531,
+    "Humidity": 35,
+    "Noise": 49,
+    "Pressure": 1019.2,
+    "AbsolutePressure": 808.2,
+    "min_temp": 21.6,
+    "max_temp": 25.8,
+    "date_min_temp": 1563545575,
+    "date_max_temp": 1563582742,
+    "temp_trend": "down",
+    "pressure_trend": "stable"
+  },
+  "outisde": {
+    "time_utc": 1563593919,
+    "Temperature": 21,
+    "Humidity": 41,
+    "min_temp": 13.3,
+    "max_temp": 25.6,
+    "date_min_temp": 1563532863,
+    "date_max_temp": 1563574848,
+    "temp_trend": "down"
+  }
+}

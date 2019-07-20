@@ -33,7 +33,7 @@ def arrow(direction):
 # Put together strings
 inside = house_icon + "70.2" + degree_icon + arrow("up")
 outside = sun_icon + "76.7" + degree_icon + arrow("down")
-meter = meter_icon + "600" + "mm" + arrow("stable")
+meter = meter_icon + "611" + "mm" + arrow("stable")
 
 inside_more = "1000" + " ppm" + "\n" + "100" + " db"
 outside_more = "52.0" + degree_icon + "lo" + "\n" + "77.7" + degree_icon + "hi"

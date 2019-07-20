@@ -1,3 +1,9 @@
+#!/bin/bash
 
-# We need to get the data from the ruby program
-#  then feed that to the display program in Python.
+# netatmo-api hits the api and writes a .json file
+cd netatmo-api
+ruby get_api_response.rb
+
+# papirus-display reads the .json file and displays it nicely
+cd ../papirus-display
+python refresh.py
