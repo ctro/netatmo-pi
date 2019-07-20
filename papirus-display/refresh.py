@@ -1,5 +1,6 @@
-from papirus import PapirusText
+import json
 
+from papirus import PapirusText
 text = PapirusText(0)
 
 # Write text to the screen specifying all options
@@ -28,6 +29,12 @@ def arrow(direction):
         return "WUT"
 
 # Get the data
+with open('../netatmo-data.json') as json_file:
+    data = json.load(json_file)
+    for d in data['inside']:
+        print('Temp: ' + p['temperature'])
+        print('Humid: ' + p['humidity'])
+        print('')
 
 
 # Put together strings
