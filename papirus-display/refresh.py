@@ -44,21 +44,25 @@ min_temp = ""
 humid_in = ""
 humid_out = ""
 
+# cast to string, round to 1 place
+def format_num(num):
+    return str(round(num, 1))
+
 with open('../netatmo-data.json') as json_file:
     data = json.load(json_file)
     inside = data['inside']
     outside = data['outside']
 
-    temp_in = str(c_to_f(inside['Temperature']))
+    temp_in = format_num(c_to_f(inside['Temperature']))
     temp_in_trend = inside['temp_trend']
-    temp_out = str(c_to_f(outside['Temperature']))
-    temp_out_trend = outside['temp_trend']
-    pressure = str(inside['Pressure'])
-    pressure_trend = inside['pressure_trend']
-    co2 = str(inside['CO2'])
-    noise = str(inside['Noise'])
-    max_temp = str(c_to_f(outside['max_temp']))
-    min_temp = str(c_to_f(outside['min_temp']))
+    temp_out = format_num(c_to_f(outside['Temperature']))
+    temp_out_trend = format_num(outside['temp_trend'])
+    pressure = format_num(inside['Pressure'])
+    pressure_trend = format_num(inside['pressure_trend'])
+    co2 = inside['CO2']
+    noise = (inside['Noise'])
+    max_temp = format_num(str(c_to_f(outside['max_temp'])))
+    min_temp = format_num(str(c_to_f(outside['min_temp'])))
     humid_in = str(inside['Humidity'])
     humid_out = str(outside['Humidity'])
 
