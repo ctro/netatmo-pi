@@ -11,7 +11,7 @@ text = PapirusText(0)
 from papirus import PapirusTextPos
 
 #relevant_icons = u"\u2302 \u2601 \u2602 \u2600 \u263C \u2B02 \u2198 \u2109 \u00B0 \u2192 \u2197 \u007C \u238B \u231A \u2603" 
-largefont=30
+largefont=27
 smallfont=13
 house_icon = u"\u2302" 
 sun_icon = u"\u263C"
@@ -52,9 +52,6 @@ humid_out = ""
 def format_num(num):
     return str(round(num, 1))
 
-def space():
-    return u"\u2063"
-
 with open('../netatmo-data.json') as json_file:
     data = json.load(json_file)
     inside = data['inside']
@@ -78,7 +75,7 @@ inside = house_icon + temp_in + degree_icon + arrow(temp_in_trend)
 outside = sun_icon + temp_out + degree_icon + arrow(temp_out_trend)
 meter = pressure + "Hg" + arrow(pressure_trend)
 
-inside_more = co2 + " ppm" + "\n" + noise + space() + " db"
+inside_more = co2 + " ppm" + "\n" + noise + " db"
 outside_more = min_temp + degree_icon + "lo" + "\n" + max_temp + degree_icon + "hi"
 meter_more = humid_in + "% in" + "\n" + humid_out + "% out"
 
@@ -86,9 +83,9 @@ font_path = "../FiraMono-Regular.ttf"
 
 # Write to the screen
 text = PapirusTextPos(0)
-text.AddText(inside, 0, 0, largefont, Id="inside", fontPath=font_path)
-text.AddText(outside, 0, 33, largefont, Id="outside", fontPath=font_path)
-text.AddText(meter, 0, 66, largefont, Id="meter", fontPath=font_path)
+text.AddText(inside, 0, -3, largefont, Id="inside", fontPath=font_path)
+text.AddText(outside, 0, 30, largefont, Id="outside", fontPath=font_path)
+text.AddText(meter, 0, 63, largefont, Id="meter", fontPath=font_path)
 
 text.AddText(inside_more, 135, 0, smallfont, Id="inside_more", fontPath=font_path)
 text.AddText(outside_more, 135, 33, smallfont, Id="outside_more", fontPath=font_path)
