@@ -29,12 +29,27 @@ def arrow(direction):
         return "WUT"
 
 # Get the data
+temp_in = ""
+temp_in_trend = ""
+temp_out = ""
+temp_out_trend = ""
+pressure = ""
+pressure_trend = ""
+co2 = ""
+noise = ""
+max_temp = ""
+min_temp = ""
+humid_in = ""
+humid_out = ""
+
 with open('../netatmo-data.json') as json_file:
     data = json.load(json_file)
-    for d in data['inside']:
-        print('Temp: ' + p['temperature'])
-        print('Humid: ' + p['humidity'])
-        print('')
+    inside = data['inside']
+    outside = data['outside']
+
+    temp_in = inside['Temperature']
+    temp_in_trend = inside['temp_trend']
+    temp_out = outside['Temperature']
 
 
 # Put together strings
