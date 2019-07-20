@@ -1,7 +1,7 @@
 require "dotenv/load"
 require "minitest"
 require "minitest/autorun"
-require_relative "../netatmo_info.rb"
+require_relative "netatmo_info.rb"
 
 class NetatmoApiTest < Minitest::Test
   def setup
@@ -20,7 +20,7 @@ class NetatmoApiTest < Minitest::Test
   def test_get_station_data
     @data = @n.get_station_data
     assert @data.is_a?(Hash)
-    assert @n.inside.is_a?(NetatmoInfo::Inside)
-    assert @n.outside.is_a?(NetatmoInfo::Outside)
+    assert @n.inside_data.is_a?(Hash)
+    assert @n.outside_data.is_a?(Hash)
   end
 end

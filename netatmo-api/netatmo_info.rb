@@ -10,21 +10,13 @@ class NetatmoInfo
     @data = get_station_data
   end
 
-  def inside_string
-    id = @data["body"]["devices"].first["dashboard_data"]
-
-    "In : #{c_to_f(id["Temperature"])}*#{arrow(id["temp_trend"])} \n" \
-    "#{id["AbsolutePressure"]}mm#{arrow(id["pressure_trend"])} \n" \
-    "#{id["CO2"]}ppm  #{id["Humidity"]}% #{id["Noise"]}db"
+  def inside_data
+    @data["body"]["devices"].first["dashboard_data"]
   end
 
-  def outside_string
+  def outside_data
     # We only have one module, the outdoor module
-    od = @data["body"]["devices"].first["modules"].first["dashboard_data"]
- 
-    "Out: #{c_to_f(od["Temperature"])}*#{arrow(od["temp_trend"])} \n" \
-    "#{c_to_f(od["min_temp"])}*lo #{c_to_f(od["max_temp"])}*hi " \
-    "#{od["Humidity"]}%"
+    @data["body"]["devices"].first["modules"].first["dashboard_data"]
   end
 
   def authentication_payload
@@ -61,19 +53,6 @@ class NetatmoInfo
     end
 
     return JSON.parse(res.body)
-  end
-
-  def arrow(direction)
-    case direction
-    when "stable"
-      "="
-    when "up"
-      "+"
-    when "down"
-      "-"
-    else
-      "WUT"
-    end
   end
 
   def c_to_f(c)
