@@ -5,8 +5,3 @@
 * [Raspberry Pi Zero setup](./pi-setup/README.md)
 
 A shell script at the root drives the whole thing.
-
-##TODO
-
-- [] change to Hg?  Hmm
-- [ ] round!
