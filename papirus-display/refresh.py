@@ -82,9 +82,11 @@ inside_more = co2 + " ppm" + "\n" + noise + space() + " db"
 outside_more = min_temp + degree_icon + "lo" + "\n" + max_temp + degree_icon + "hi"
 meter_more = humid_in + "% in" + "\n" + humid_out + "% out"
 
+font_path = "./font.ttf"
+
 # Write to the screen
 text = PapirusTextPos(0)
-text.AddText(inside, 0, 0, largefont, Id="inside")
+text.AddText(inside, 0, 0, largefont, Id="inside", fontPath=font_path)
 text.AddText(outside, 0, 33, largefont, Id="outside")
 text.AddText(meter, 0, 66, largefont, Id="meter")
 
