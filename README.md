@@ -5,3 +5,8 @@
 * [Raspberry Pi Zero setup](./pi-setup/README.md)
 
 A shell script at the root drives the whole thing.
+
+## TODO
+
+- use pressure not absolute pressure
+- change to Hg?  Hmm
