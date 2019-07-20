@@ -20,6 +20,10 @@ degree_icon = u"\u00B0"
 def c_to_f(c):
     return float(((c * 9 / 5) + 32))
 
+def mm_to_inHg(mm):
+    #Millibars to Inches of Mercury
+    return mm / 33.864
+
 def arrow(direction):
     if (direction == "stable"):
         return u"\u2192"
@@ -48,6 +52,9 @@ humid_out = ""
 def format_num(num):
     return str(round(num, 1))
 
+def space():
+    return u"\u2063"
+
 with open('../netatmo-data.json') as json_file:
     data = json.load(json_file)
     inside = data['inside']
@@ -57,22 +64,22 @@ with open('../netatmo-data.json') as json_file:
     temp_in_trend = inside['temp_trend']
     temp_out = format_num(c_to_f(outside['Temperature']))
     temp_out_trend = outside['temp_trend']
-    pressure = format_num(inside['Pressure'])
+    pressure = format_num(mm_to_inHg(inside['Pressure']))
     pressure_trend = inside['pressure_trend']
-    co2 = inside['CO2']
-    noise = (inside['Noise'])
-    max_temp = format_num(str(c_to_f(outside['max_temp'])))
-    min_temp = format_num(str(c_to_f(outside['min_temp'])))
+    co2 = str(inside['CO2'])
+    noise = str(inside['Noise'])
+    max_temp = format_num(c_to_f(outside['max_temp']))
+    min_temp = format_num(c_to_f(outside['min_temp']))
     humid_in = str(inside['Humidity'])
     humid_out = str(outside['Humidity'])
 
 # Put together strings
 inside = house_icon + temp_in + degree_icon + arrow(temp_in_trend)
 outside = sun_icon + temp_out + degree_icon + arrow(temp_out_trend)
-meter = pressure + "mm" + arrow(pressure_trend)
+meter = pressure + "Hg" + arrow(pressure_trend)
 
-inside_more = co2 + " ppm" + "\n" + noise + " db"
-outside_more = min_temp + degree_icon + "lo" + "\n" + max_temp + degree_icon
+inside_more = co2 + " ppm" + "\n" + noise + space() + " db"
+outside_more = min_temp + degree_icon + "lo" + "\n" + max_temp + degree_icon + "hi"
 meter_more = humid_in + "% in" + "\n" + humid_out + "% out"
 
 # Write to the screen
