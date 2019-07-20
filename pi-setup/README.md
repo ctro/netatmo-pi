@@ -73,6 +73,13 @@ network={
 }
 ```
 
+## Python!?
+
+Change from python2 to 3
+
+`echo "alias python=/usr/bin/python3" >> ~/.bashrc`
+
+
 ## ePaper Setup
 
 Homepage / documentation: https://github.com/PiSupply/PaPiRus
@@ -86,3 +93,5 @@ Homepage / documentation: https://github.com/PiSupply/PaPiRus
 Install a mailer `sudo apt install postfix -y`
 
 Manual cron installation `crontab netatmo.cron`
+
+
