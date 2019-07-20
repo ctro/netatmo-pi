@@ -15,8 +15,10 @@ largefont=30
 smallfont=13
 house_icon = u"\u2302" 
 sun_icon = u"\u263C"
-meter_icon = u"\u238B" 
 degree_icon = u"\u00B0"
+
+def c_to_f(c):
+    return float(((c * 9 / 5) + 32))
 
 def arrow(direction):
     if (direction == "stable"):
@@ -47,19 +49,27 @@ with open('../netatmo-data.json') as json_file:
     inside = data['inside']
     outside = data['outside']
 
-    temp_in = inside['Temperature']
+    temp_in = str(c_to_f(inside['Temperature']))
     temp_in_trend = inside['temp_trend']
-    temp_out = outside['Temperature']
-
+    temp_out = str(c_to_f(outside['Temperature']))
+    temp_out_trend = outside['temp_trend']
+    pressure = str(inside['AbsolutePressure'])
+    pressure_trend = inside['pressure_trend']
+    co2 = str(inside['CO2'])
+    noise = str(inside['Noise'])
+    max_temp = str(c_to_f(outside['max_temp']))
+    min_temp = str(c_to_f(outside['min_temp']))
+    humid_in = str(inside['Humidity'])
+    humid_out = str(outside['Humidity'])
 
 # Put together strings
-inside = house_icon + "70.2" + degree_icon + arrow("up")
-outside = sun_icon + "76.7" + degree_icon + arrow("down")
-meter = meter_icon + "611" + "mm" + arrow("stable")
+inside = house_icon + temp_in + degree_icon + arrow(temp_in_trend)
+outside = sun_icon + temp_out + degree_icon + arrow(temp_out_trend)
+meter = pressure + "mm" + arrow(pressure_trend)
 
-inside_more = "1000" + " ppm" + "\n" + "100" + " db"
-outside_more = "52.0" + degree_icon + "lo" + "\n" + "77.7" + degree_icon + "hi"
-meter_more = "33" + "% in" + "\n" + "44" + "% out"
+inside_more = co2 + " ppm" + "\n" + noise + " db"
+outside_more = min_temp + degree_icon + "lo" + "\n" + max_temp + degree_icon
+meter_more = humid_in + "% in" + "\n" + humid_out + "% out"
 
 # Write to the screen
 text = PapirusTextPos(0)
