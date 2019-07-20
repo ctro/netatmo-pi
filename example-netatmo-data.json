@@ -14,7 +14,7 @@
     "temp_trend": "down",
     "pressure_trend": "stable"
   },
-  "outisde": {
+  "outside": {
     "time_utc": 1563593919,
     "Temperature": 21,
     "Humidity": 41,
