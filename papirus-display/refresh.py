@@ -32,7 +32,7 @@ def arrow(direction):
     elif (direction == "down"):
         return u"\u2198"
     else:
-        return "x"
+        return "?"
 
 # Get the data
 temp_in = ""
@@ -58,11 +58,11 @@ with open('../netatmo-data.json') as json_file:
     outside = data['outside']
 
     temp_in = format_num(c_to_f(inside['Temperature']))
-    temp_in_trend = inside['temp_trend']
+    temp_in_trend = inside.get('temp_trend', '')
     temp_out = format_num(c_to_f(outside['Temperature']))
-    temp_out_trend = outside['temp_trend']
+    temp_out_trend = outside.get('temp_trend', '')
     pressure = format_num(mm_to_inHg(inside['Pressure']))
-    pressure_trend = "" #outside['pressure_trend']
+    pressure_trend = outside.get('pressure_trend', '')
     co2 = str(inside['CO2'])
     noise = str(inside['Noise'])
     max_temp = format_num(c_to_f(outside['max_temp']))
